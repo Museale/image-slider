@@ -1,0 +1,20 @@
+@import './reset';
+@import './mixins';
+
+body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+overflow: hidden;
+}
+
+#wrapper {  
+    border: 1px solid $border-colour;
+    height: 60vh;
+    width: 100vw;
+
+    background-color: $border-colour;
+
+}
