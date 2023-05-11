@@ -1,147 +1,144 @@
-@import './reset';
-@import './mixins';
+@import "./reset";
+@import "./mixins";
 
 body {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    background-color: black;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
 }
 
-#wrapper {  
-    display: grid;
-    align-items: center;
-    justify-content: center;
-  
-    height: 60vh;
-    width: 100vw;
-  
+#wrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  height: 60vh;
+  width: 100vw;
 }
 
 #carousel-wrapper {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: 48px 1fr 48px;
-    grid-template-rows: 1fr 10px;
-    width: 100vw;
-    height: 60vh;
-    background-color: rgba(248, 248, 248, 0.438);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 48px 1fr 48px;
+  grid-template-rows: 1fr 10px;
+  width: 100vw;
+  height: 60vh;
+  background-color: rgba(248, 248, 248, 0.438);
 }
 
 #slides {
-    justify-self: center;
-    align-self: center;
-    grid-column: 1 / span 3;
-    grid-row: 1 / span 2;
-    width: 100%;
-    height: 100%;
-    background-color: white;
+  justify-self: center;
+  align-self: center;
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 2;
+  width: 100%;
+  height: 100%;
+  background-color: white;
 }
 #slides > div {
-    width: 100%;
-    height: 60%;
+  width: 100%;
+  height: 60%;
 }
 
 #bottom-dot-container {
-   display: flex;
-    gap: 10px;
-    grid-row: 2;
-    height: 20px;
-    grid-column: 2;
-    width: fit-content;
-    justify-self: center;
-    align-self: end;
-    z-index: 10;
+  display: flex;
+  gap: 10px;
+  grid-row: 2;
+  height: 20px;
+  grid-column: 2;
+  width: fit-content;
+  justify-self: center;
+  align-self: end;
+  z-index: 10;
 }
 .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 3px solid rgb(9, 9, 10);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 3px solid rgb(9, 9, 10);
 }
 
 .dot:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .fill {
-    background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
 }
 
 #arrow-left {
-    z-index: 10;
-    position: absolute;
-    justify-self: flex-start;
+  z-index: 10;
+  position: absolute;
+  justify-self: flex-start;
+  width: 48px;
+  aspect-ratio: 1.5;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  > img {
     width: 48px;
-    aspect-ratio: 1.5;
-    appearance: none;
-    background-color: transparent;
-    border:none;
-    > img {
-        width: 48px;
-    }
+  }
 }
 
 #arrow-right {
-    z-index: 10;
-    position: absolute;
-    justify-self: flex-end;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  z-index: 10;
+  position: absolute;
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  aspect-ratio: 1.5;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  > img {
     width: 48px;
-    aspect-ratio: 1.5;
-    appearance: none;
-    background-color: transparent;
-    border:none;
-    > img {
-        width: 48px;
-    }
+  }
 }
 
 #first-slide {
-    background-image: url('./icons/pexels-torsten-dettlaff-971546.jpg');
-    background-position: bottom;
+  background-image: url("./icons/pexels-ann-h-3095769.jpg");
 }
 
-#second-slide  {
-    background-image: url('./icons/pexels-torsten-dettlaff-971546.jpg');
-    background-position: center;
+#second-slide {
+  background-image: url("./icons/pexels-steve-johnson-1546542.jpg");
 }
 
 #third-slide {
-    background-image: url('./icons/pexels-steve-johnson-1572386.jpg');
-    background-position: center;
+  background-image: url("./icons/pexels-steve-johnson-1572386.jpg");
 }
 
 #fourth-slide {
-
-    background-image: url('./icons/pexels-steve-johnson-1183992.jpg');
-    background-position: center;
+  background-image: url("./icons/pexels-steve-johnson-1183992.jpg");
 }
 
 .slide {
-    display: grid;
-    position: absolute;
-    justify-self: center;
-    align-self: center;
-    transform: translateX(-100%);
-    transition: 1s;
-
+  display: grid;
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  transform: translateX(-100%);
+  transition: 1s;
+  z-index: 1;
 }
 
 .current-slide {
-    display: grid;
-    transform: translateX(0%);
+  display: grid;
+  z-index: 2;
+  transform: translateX(0%);
 }
 
 .prev {
-    transform: translateX(-100%);
+  transform: translateX(-100%);
+  z-index: 0;
 }
 
 .next {
-    transform: translateX(100%);
+  transform: translateX(100%);
+  z-index: 0;
 }
