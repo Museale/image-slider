@@ -3,6 +3,7 @@ import { renderNavigation, slider } from "./_slider";
 
 export const events = (() => {
     const filterdots = Array.from(get.dotNavContainer.childNodes).filter(node => node.nodeType === node.ELEMENT_NODE);
+
 get.leftArrowBtn.addEventListener('click', () => {
     let sliderIndex;
 
@@ -10,7 +11,6 @@ get.leftArrowBtn.addEventListener('click', () => {
     slider.allSlides[i].classList.contains('current-slide') ? 
        sliderIndex = slider.allSlides[i].dataset.value : false;
     }
-
     sliderIndex--;
     sliderIndex >= 0 && sliderIndex <= slider.allSlides.length -1 ? 
     slider.currentSlide(sliderIndex) : slider.currentSlide(slider.allSlides.length -1);
@@ -24,11 +24,10 @@ get.leftArrowBtn.addEventListener('click', () => {
         } 
     
     })
-    
 })
+
 get.rightArrowBtn.addEventListener('click', () => {
     let sliderIndex;
-
     for (let i = 0; i < slider.allSlides.length; i++) {
         slider.allSlides[i].classList.contains('current-slide') ? 
            sliderIndex = slider.allSlides[i].dataset.value : false;
@@ -47,6 +46,7 @@ get.rightArrowBtn.addEventListener('click', () => {
         } 
     
     })
+
 })
 
 get.dotNavContainer.addEventListener('click', (e) => {
@@ -61,4 +61,5 @@ get.dotNavContainer.addEventListener('click', (e) => {
     }
 })
 })();
+
 
