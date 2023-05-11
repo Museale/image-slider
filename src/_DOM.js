@@ -1,3 +1,5 @@
+console.log('dom')
+
 export const get = (() => {
     const wrapper = document.getElementById('wrapper');
     const carouselWrapper = document.getElementById('carousel-wrapper');
@@ -8,7 +10,7 @@ export const get = (() => {
     const firstSlide = document.getElementById('first-slide');
     const secondSlide = document.getElementById('second-slide');
     const thirdSlide = document.getElementById('third-slide');
-
+    const fourthSlide = document.getElementById('fourth-slide')
 
     return {
         wrapper,
@@ -19,8 +21,7 @@ export const get = (() => {
         slides,
         firstSlide,
         secondSlide,
-        thirdSlide
+        thirdSlide,
+        fourthSlide
     }
 })();
-
-

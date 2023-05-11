@@ -7,16 +7,17 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    background-color: black;
 }
 
 #wrapper {  
     display: grid;
     align-items: center;
     justify-content: center;
-    border: 1px solid $border-colour;
+  
     height: 60vh;
     width: 100vw;
-    background-color: $border-colour;
+  
 }
 
 #carousel-wrapper {
@@ -34,7 +35,7 @@ body {
     justify-self: center;
     align-self: center;
     grid-column: 1 / span 3;
-    grid-row: 1 /span 2;
+    grid-row: 1 / span 2;
     width: 100%;
     height: 100%;
     background-color: white;
@@ -46,12 +47,28 @@ body {
 }
 
 #bottom-dot-container {
+   display: flex;
+    gap: 10px;
     grid-row: 2;
     height: 20px;
-    border: 1px solid black;
     grid-column: 2;
     width: fit-content;
     justify-self: center;
+    align-self: end;
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 3px solid rgb(116, 118, 129);
+}
+
+.dot:hover {
+    cursor: pointer;
+}
+
+.fill {
+    background-color: rgb(116, 118, 129);
 }
 
 #arrow-left {
@@ -84,16 +101,16 @@ body {
 }
 
 #first-slide {
-    background-color: rgb(107, 107, 190);
+    background-color: rgba(107, 107, 190, 0.452);
 }
 
 #second-slide  {
-    background-color: rgb(255, 255, 159);
+    background-color: rgba(255, 255, 159, 0.562);
 
 }
 
 #third-slide {
-    background-color: rgb(95, 160, 109);
+    background-color: rgba(95, 160, 109, 0.486);
   
 }
 
@@ -104,3 +121,4 @@ body {
 .current-slide {
     display: grid;
 }
+
