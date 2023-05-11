@@ -5,16 +5,102 @@ body {
     display: grid;
     justify-content: center;
     align-items: center;
-    width: 100vw;
     height: 100vh;
-overflow: hidden;
+    overflow: hidden;
 }
 
 #wrapper {  
+    display: grid;
+    align-items: center;
+    justify-content: center;
     border: 1px solid $border-colour;
     height: 60vh;
     width: 100vw;
-
     background-color: $border-colour;
+}
 
+#carousel-wrapper {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 48px 1fr 48px;
+    grid-template-rows: 1fr 10px;
+    width: 100vw;
+    height: 50vh;
+    background-color: rgba(248, 248, 248, 0.438);
+}
+
+#slides {
+    justify-self: center;
+    align-self: center;
+    grid-column: 1 / span 3;
+    grid-row: 1 /span 2;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+#slides > div {
+    width: 100%;
+    height: 100%;
+    
+}
+
+#bottom-dot-container {
+    grid-row: 2;
+    height: 20px;
+    border: 1px solid black;
+    grid-column: 2;
+    width: fit-content;
+    justify-self: center;
+}
+
+#arrow-left {
+    position: absolute;
+    justify-self: flex-start;
+    width: 48px;
+    aspect-ratio: 1.5;
+    appearance: none;
+    background-color: transparent;
+    border:none;
+    > img {
+        width: 48px;
+    }
+}
+
+#arrow-right {
+    position: absolute;
+    justify-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    aspect-ratio: 1.5;
+    appearance: none;
+    background-color: transparent;
+    border:none;
+    > img {
+        width: 48px;
+    }
+}
+
+#first-slide {
+    background-color: rgb(107, 107, 190);
+}
+
+#second-slide  {
+    background-color: rgb(255, 255, 159);
+
+}
+
+#third-slide {
+    background-color: rgb(95, 160, 109);
+  
+}
+
+.slide {
+    display: none;
+}
+
+.current-slide {
+    display: grid;
 }
