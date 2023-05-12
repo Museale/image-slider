@@ -4,6 +4,8 @@ import leftArrowIcon from "./icons/211689_left_arrow_icon.svg";
 import { get } from "./_DOM";
 
 export const slider = (() => {
+  let slideTimer;
+
   const allSlides = [
     get.firstSlide,
     get.secondSlide,
@@ -19,9 +21,12 @@ export const slider = (() => {
     });
     allSlides[index].classList.toggle("current-slide");
   };
+
   const currentSlide = (index) => {
     prevNext(index);
     setVisibility(index);
+    clearTimeout(slideTimer);
+    slideTimer = timer(index);
     return allSlides[index];
   };
 
@@ -39,11 +44,33 @@ export const slider = (() => {
     });
   };
 
+  const timer = (index) => {
+    return setTimeout(() => {
+      if (index + 1 < allSlides.length) {
+        currentSlide(index + 1);
+        get.dotNavContainer.childNodes.forEach((element) => {
+          element.dataset.value == index + 1
+            ? element.classList.add("fill")
+            : element.classList.remove("fill");
+        });
+      }
+      if (index + 1 == allSlides.length) {
+        currentSlide(0);
+        get.dotNavContainer.childNodes.forEach((element) => {
+          element.dataset.value == 0
+            ? element.classList.add("fill")
+            : element.classList.remove("fill");
+        });
+      }
+    }, 5000);
+  };
+
   return {
     currentSlide,
     allSlides,
     setVisibility,
     prevNext,
+    timer,
   };
 })();
 

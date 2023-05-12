@@ -8,7 +8,6 @@ export const events = (() => {
 
   get.leftArrowBtn.addEventListener("click", () => {
     let sliderIndex;
-
     for (let i = 0; i < slider.allSlides.length; i++) {
       slider.allSlides[i].classList.contains("current-slide")
         ? (sliderIndex = slider.allSlides[i].dataset.value)
@@ -35,10 +34,9 @@ export const events = (() => {
     let sliderIndex;
     for (let i = 0; i < slider.allSlides.length; i++) {
       slider.allSlides[i].classList.contains("current-slide")
-        ? (sliderIndex = slider.allSlides[i].dataset.value)
+        ? (sliderIndex = parseInt(slider.allSlides[i].dataset.value))
         : false;
     }
-
     sliderIndex++;
     sliderIndex >= 0 && sliderIndex < slider.allSlides.length
       ? slider.currentSlide(sliderIndex)
@@ -63,7 +61,7 @@ export const events = (() => {
           filterdots[i].classList.toggle("fill");
       }
       e.target.classList.toggle("fill");
-      slider.currentSlide(e.target.dataset.value);
+      slider.currentSlide(parseInt(e.target.dataset.value));
     }
   });
 })();
