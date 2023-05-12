@@ -1,10 +1,7 @@
 import rightArrowIcon from "./icons/211607_right_arrow_icon.svg";
 import leftArrowIcon from "./icons/211689_left_arrow_icon.svg";
-import firstSliderImg from "./icons/pexels-torsten-dettlaff-971546.jpg";
 
 import { get } from "./_DOM";
-
-console.log("slider");
 
 export const slider = (() => {
   const allSlides = [

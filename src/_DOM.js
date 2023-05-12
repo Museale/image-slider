@@ -1,5 +1,3 @@
-console.log("dom");
-
 export const get = (() => {
   const wrapper = document.getElementById("wrapper");
   const carouselWrapper = document.getElementById("carousel-wrapper");

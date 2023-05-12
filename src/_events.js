@@ -19,7 +19,6 @@ export const events = (() => {
       ? slider.currentSlide(sliderIndex)
       : slider.currentSlide(slider.allSlides.length - 1);
     filterdots.forEach((dot) => {
-      console.log(dot.dataset.value, sliderIndex);
       if (dot.classList.contains("fill")) {
         dot.classList.toggle("fill");
       }
